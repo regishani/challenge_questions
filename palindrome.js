@@ -9,12 +9,27 @@
  * palindrome('frontend') === false
  */
 
+//1st WAY
  const palindrome = (str) => {
     //Check if first string and last string are the same
     return str === reversedString(str)
 };
 const reversedString = (str) =>{
     return str.split('').reverse().join('')
+}
+
+//2nd way!!!
+const palindrome = (str) => {
+    const middle = Math.floor(str.length/2)
+    for (let i = 0; i<middle; i++){
+        const reversedIndex = str.length -1 -i
+        if(str[i]!= str[reversedIndex]){
+            return false
+        }else{
+            return true
+        }
+
+    }
 }
 
 module.exports = palindrome;
